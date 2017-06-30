@@ -30,7 +30,6 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
-          console.log(doc);
           console.log("------------------");
           console.log(patient);
           console.log("--------------");
