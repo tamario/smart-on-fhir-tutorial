@@ -23,7 +23,7 @@
                   });
 
           var document = smart.patient.api.fetchAll({
-              type: 'DocumentReference',
+              type: 'DocumentReference'
           }).then(function(doc){
             console.log(doc);
             console.log(doc.data);
