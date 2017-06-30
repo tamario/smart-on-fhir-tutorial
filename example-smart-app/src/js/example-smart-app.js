@@ -22,12 +22,11 @@
                     }
                   });
 
-          var document = smart.patient.api.fetchAll({
-              type: 'DocumentReference'
-          }).then(function(doc){
-            console.log(doc);
-            console.log(doc.data);
-          });
+          smart.patient.api.search({type: "DocumentReference"})
+              .then(function(r){
+                console.log(r);
+                console.log(r.data.entry); 
+              });
 
          /*var resource = {
              "resourceType": "DocumentReference",
