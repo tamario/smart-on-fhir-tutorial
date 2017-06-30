@@ -2,14 +2,12 @@
   window.extractData = function() {
     var ret = $.Deferred();
 
-    var piggy = function(err) { console.log(err); };
     function onError() {
       console.log('Loading error', arguments);
       ret.reject();
     }
 
     function onReady(smart)  {
-        piggy('working');
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -23,10 +21,15 @@
                       }
                     }
                   });
+        var document = smart.patient.api.fetchAll({
+            type:"DocumentReference"
+          });
 
         $.when(pt, obv).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv, document).done(function(patient, obv, doc) {
+          console.log(doc);
+          console.log("------------------");
           console.log(patient);
           console.log("--------------");
           console.log(obv);
