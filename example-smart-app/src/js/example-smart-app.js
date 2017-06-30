@@ -21,13 +21,15 @@
                       }
                     }
                   });
-        var document = smart.patient.api.fetchAll({
-            type:"DocumentReference"
-          });
+          patient.api.search({type: "DocumentReference"})
+              .then(function(r){
+                var docs = r.data.entry;
+                console.log(docs)
+              });
 
         $.when(pt, obv).fail(onError);
 
-        $.when(pt, obv, document).done(function(patient, obv, doc) {
+        $.when(pt, obv).done(function(patient, obv) {
           console.log(doc);
           console.log("------------------");
           console.log(patient);
