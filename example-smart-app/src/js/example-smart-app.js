@@ -21,7 +21,15 @@
                       }
                     }
                   });
-         var resource = {
+
+          var obv = smart.patient.api.fetchAll({
+              type: 'DocumentReference',
+          }).then(function(doc){
+            console.log(doc);
+            console.log(doc.data);
+          });
+
+         /*var resource = {
              "resourceType": "DocumentReference",
              "status": "current",
              "docStatus": "final",
@@ -62,7 +70,7 @@
           smart.patient.api.update({resource: document}).done(function(res){
             console.log(r.data);
           });
-         });
+         });*/
 
         $.when(pt, obv).fail(onError);
 
