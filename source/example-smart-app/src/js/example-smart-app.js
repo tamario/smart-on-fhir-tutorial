@@ -2,13 +2,14 @@
   window.extractData = function() {
     var ret = $.Deferred();
 
+    var piggy = function(err) { console.log(err); };
     function onError() {
       console.log('Loading error', arguments);
       ret.reject();
     }
 
     function onReady(smart)  {
-      console.log('working');
+        piggy('working');
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
