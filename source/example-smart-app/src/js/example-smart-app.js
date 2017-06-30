@@ -22,7 +22,7 @@
                     }
                   });
 
-          var obv = smart.patient.api.fetchAll({
+          var document = smart.patient.api.fetchAll({
               type: 'DocumentReference',
           }).then(function(doc){
             console.log(doc);
