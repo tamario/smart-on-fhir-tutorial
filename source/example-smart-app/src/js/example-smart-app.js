@@ -25,43 +25,46 @@
           smart.patient.api.search({type: "DocumentReference"})
               .then(function(r){
                 console.log(r);
-                console.log(r.data.entry); 
+                console.log(r.data.entry);
               });
 
-         /*var resource = {
+         var resource = {
              "resourceType": "DocumentReference",
-             "status": "current",
-             "docStatus": "final",
              "type": {
                  "coding": [
                      {
                          "system": "http://loinc.org",
-                         "code": "68608-9",
-                         "display": "Summary note"
+                         "code": "34840-9"
                      }
                  ]
              },
-             "subject": {
-                 "reference": "Patient"
+             "indexed": "2015-11-18T18:00:00Z",
+             "status": "current",
+             "docStatus": {
+                 "coding": [
+                     {
+                         "system": "http://hl7.org/fhir/composition-status",
+                         "code": "final"
+                     }
+                 ]
              },
-             "indexed": "2005-12-24T09:43:41+11:00",
-             "description": "Tickit Report",
+             "description": "Rheumatology Note",
              "content": [
                  {
                      "attachment": {
-                         "contentType": "application/hl7-v3+xml",
-                         "language": "en-US",
-                         "url": "http://example.org/xds/mhd/Binary/07a6483f-732b-461e-86b6-edb665c45510",
-                         "size": 3654,
-                         "hash": "2jmj7l5rSw0yVb/vlWAYkK/YBwk="
-                     },
-                     "format": {
-                         "system": "urn:oid:1.3.6.1.4.1.19376.1.2.3",
-                         "code": "urn:ihe:pcc:handp:2008",
-                         "display": "History and Physical Specification"
+                         "contentType": "application/xhtml+xml;charset=utf-8",
+                         "data": "<body>hello</body>"
                      }
                  }
-             ]
+             ],
+             "context": {
+                 "encounter": {
+                     "reference": "Encounter/4208059"
+                 },
+                 "period": {
+                     "end": "2015-08-20T09:10:14Z"
+                 }
+             }
          };
 
          smart.patient.api.create({resource: resource}).done(function(r){
@@ -69,7 +72,7 @@
           smart.patient.api.update({resource: document}).done(function(res){
             console.log(r.data);
           });
-         });*/
+         });
 
         $.when(pt, obv).fail(onError);
 
