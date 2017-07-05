@@ -22,58 +22,6 @@
                     }
                   });
 
-          smart.patient.api.search({type: "DocumentReference"})
-              .then(function(r){
-                console.log(r);
-                console.log(r.data.entry);
-              });
-
-         var resource = {
-             "resourceType": "DocumentReference",
-             "type": {
-                 "coding": [
-                     {
-                         "system": "http://loinc.org",
-                         "code": "34840-9"
-                     }
-                 ]
-             },
-             "indexed": "2015-11-18T18:00:00Z",
-             "status": "current",
-             "docStatus": {
-                 "coding": [
-                     {
-                         "system": "http://hl7.org/fhir/composition-status",
-                         "code": "final"
-                     }
-                 ]
-             },
-             "description": "Rheumatology Note",
-             "content": [
-                 {
-                     "attachment": {
-                         "contentType": "application/xhtml+xml;charset=utf-8",
-                         "data": "<body>hello</body>"
-                     }
-                 }
-             ],
-             "context": {
-                 "encounter": {
-                     "reference": "Encounter/4208059"
-                 },
-                 "period": {
-                     "end": "2015-08-20T09:10:14Z"
-                 }
-             }
-         };
-
-         smart.patient.api.create({resource: resource}).done(function(r){
-          var document = r.data;
-          smart.patient.api.update({resource: document}).done(function(res){
-            console.log(r.data);
-          });
-         });
-
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
