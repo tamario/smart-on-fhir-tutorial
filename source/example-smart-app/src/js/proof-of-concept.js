@@ -32,7 +32,7 @@
                     }
 
                     var p = defaultPatient();
-                    p.birthdate = dobStr;
+                    p.birthdate = dob;
                     p.gender = gender;
                     p.fname = fname;
                     p.lname = lname;
