@@ -6,6 +6,44 @@
     <title>tamarioExample-SMART-App</title>
 
     <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
+    <style>
+      label, h2{
+        font-family:'Helvetica';
+      }
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family:'Helvetica';
+      }
+
+      input[type=button] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family:'Helvetica';
+      }
+
+      input[type=button]:hover {
+        background-color: #45a049;
+      }
+
+      div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+    </style>
+
   </head>
   <body>
     <div id='errors'>
@@ -17,7 +55,7 @@
     </div>
     <div id='holder' >
       <h2>Example-SMART-App</h2>
-      <h2>Patient Resource</h2>
+      <!--<h2>Patient Resource</h2>
       <table>
         <tr>
           <th>First Name:</th>
@@ -39,31 +77,41 @@
           <th>Age:</th>
           <td id='age'></td>
         </tr>
-      </table>
-      <h2>Observation Resource</h2>
-      <table>
-        <tr>
-          <th>Height:</th>
-          <td id='height'></td>
-        </tr>
-        <tr>
-          <th>Systolic Blood Pressure:</th>
-          <td id='systolicbp'></td>
+      </table>-->
+      <!---->
+      <div>
+        <h2>Client Data</h2>
+        <label for="fname">First Name</label>
+        <input type="text" name="firstname" id="fname" value="">
+        <label for="lname">Last Name</label>
+        <input type="text" name="firstname" id="lname" value="">
+        <label for="birthdate">Date of Birth</label>
+        <input type="text" name="date of birth" id="birthdate" value="">
+        <label for="clientID">Client ID</label>
+        <input type="text" name="Client ID" id="clientID" value="">
 
-        </tr>
-        <tr>
-          <th>Diastolic Blood Pressure:</th>
-          <td id='diastolicbp'></td>
-        </tr>
-        <tr>
-          <th>LDL:</th>
-          <td id='ldl'></td>
-        </tr>
-        <tr>
-          <th>HDL:</th>
-          <td id='hdl'></td>
-        </tr>
-      </table>
+        <h2>Additional Data</h2>
+        <select id=clientStatus name="Client Status">
+          <option value="Select a Client Status">-- Select a Client Status --</option>
+          <option value="1st visit to Foundry, never received provider services">1st visit to Foundry, never received provider services</option>
+          <option value="1st visit to Foundry, previously received provider services">1st visit to Foundry, previously received provider services</option>
+          <option value="Returning visit">Returning visit</option>
+        </select>
+        <select id="service" name="Service">
+          <option value="-- Select a Service --">-- Select a Service --</option>
+          <option value="Primary Care">Primary Care</option>
+          <option value="Mental Health Services">Mental Health Services</option>
+          <option value="Substance Use Services">Substance Use Services</option>
+          <option value="Social Services">Social Services</option>
+          <option value="Youth and Family Peer Support and Navigation">Youth and Family Peer Support and Navigation</option>
+          <option value="Other Services">Other Services</option>
+        </select>
+
+        <input type="button" value="Send Survey">
+      </div>
+
+
+      <!---->
     </div>
     <script src='./lib/es6-shim-0.35.1.min.js'></script>
     <!--<script src='./src/js/example-smart-app.js'></script>-->
