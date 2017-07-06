@@ -75,6 +75,7 @@
         $('#fname').val(p.fname.toString());
         $('#lname').val(p.lname.toString());
         $('#birthdate').val(p.birthdate.toString());
+        $('#patientID').val(p.patientID.toString());
     };
 
 })(window);
