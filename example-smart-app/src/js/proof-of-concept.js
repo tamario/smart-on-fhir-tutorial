@@ -21,8 +21,17 @@
                     console.log("------------------");
                     console.log(patient);
                     console.log("--------------");
+                    var patientIDs = patient.identifier;
                     var patientID = "";
-                    var dob = new Date(patient.birthDate).toDateString();
+                    patientIDs.forEach(function(id){
+                        if(id.type.coding[0].code == "MR"){
+                            patientID = id.value;
+                            console.log(patientID);
+                            console.log(id.type.coding[0].code);
+                        }
+                    });
+                    var gender = patient.gender;
+                    var dob = patient.birthDate;
                     var fname = '';
                     var lname = '';
 
@@ -36,6 +45,7 @@
                     p.gender = gender;
                     p.fname = fname;
                     p.lname = lname;
+                    p.patientID = patientID;
 
                     ret.resolve(p);
                 });
@@ -54,7 +64,8 @@
             fname: {value: ''},
             lname: {value: ''},
             gender: {value: ''},
-            birthdate: {value: ''}
+            birthdate: {value: ''},
+            patientID: {value: ''}
         };
     }
 

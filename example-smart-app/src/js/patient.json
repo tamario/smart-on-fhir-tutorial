@@ -1,0 +1,198 @@
+{
+  "resourceType": "Patient",
+  "id": "4342012",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2017-06-09T13:41:09.000Z"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div><p><b>Patient</b></p><p><b>Name</b>: Smart, Timmy</p><p><b>DOB</b>: 2012-02-19</p><p><b>Administrative Gender</b>: Male</p><p><b>Status</b>: Active</p></div>"
+  },
+  "extension": [
+    {
+      "url": "http://fhir.org/guides/argonaut/StructureDefinition/argo-race",
+      "extension": [
+        {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/v3/Race",
+            "code": "2028-9",
+            "display": "Asian",
+            "userSelected": false
+          }
+        },
+        {
+          "url": "text",
+          "valueString": "Asian"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/v2/0203",
+            "code": "MR",
+            "display": "Medical record number",
+            "userSelected": false
+          }
+        ],
+        "text": "MRN"
+      },
+      "system": "urn:oid:1.1.1.1.1.1",
+      "value": "10002704",
+      "period": {
+        "start": "2016-06-22T21:16:55.000Z"
+      }
+    },
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/v2/0203",
+            "code": "AN",
+            "display": "Account number",
+            "userSelected": false
+          }
+        ],
+        "text": "Federated Person Principal"
+      },
+      "system": "urn:oid:2.16.840.1.113883.3.13.6",
+      "value": "urn:cerner:identity-federation:realm:687f29dd-69dd-4de5-acb1-fd8a2241ef3a:principal:K77hB79F7ri",
+      "period": {
+        "start": "2016-01-01T10:00:00.000Z"
+      }
+    },
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/v2/0203",
+            "code": "AN",
+            "display": "Account number",
+            "userSelected": false
+          }
+        ],
+        "text": "Federated Person Principal"
+      },
+      "system": "urn:oid:2.16.840.1.113883.3.13.6",
+      "value": "URN:CERNER:IDENTITY-FEDERATION:REALM:687F29DD-69DD-4DE5-ACB1-FD8A2241EF3A:PRINCIPAL:K77HB79F7RI",
+      "period": {
+        "start": "2016-01-01T10:00:00.000Z"
+      }
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "text": "Smart, Timmy",
+      "family": [
+        "Smart"
+      ],
+      "given": [
+        "Timmy"
+      ],
+      "period": {
+        "start": "2016-06-22T21:16:56.000Z"
+      }
+    }
+  ],
+  "gender": "male",
+  "birthDate": "2012-02-19",
+  "contact": [
+    {
+      "relationship": [
+        {
+          "text": "Authorized Representative"
+        }
+      ],
+      "name": {
+        "use": "official",
+        "text": "SMART, JOE",
+        "family": [
+          "SMART"
+        ],
+        "given": [
+          "JOE"
+        ],
+        "period": {
+          "start": "2016-06-22T21:06:59.000Z"
+        }
+      },
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "9139898765",
+          "use": "home",
+          "period": {
+            "start": "2017-06-27T21:47:16.000Z"
+          }
+        },
+        {
+          "system": "phone",
+          "value": "9137876555",
+          "use": "mobile",
+          "period": {
+            "start": "2017-06-27T21:47:16.000Z"
+          }
+        }
+      ],
+      "address": {
+        "use": "home",
+        "text": "1234 Blvd\nOverland Park, KS 66213\nUSA",
+        "line": [
+          "1234 Blvd"
+        ],
+        "city": "Overland Park",
+        "district": "Johnson",
+        "state": "KS",
+        "postalCode": "66213",
+        "country": "USA",
+        "period": {
+          "start": "2017-06-27T21:47:16.000Z"
+        }
+      },
+      "gender": "male",
+      "period": {
+        "start": "2017-06-09T13:41:09.000Z"
+      }
+    },
+    {
+      "relationship": [
+        {
+          "text": "Authorized Representative"
+        }
+      ],
+      "name": {
+        "use": "official",
+        "text": "Smart, Nancy",
+        "family": [
+          "Smart"
+        ],
+        "given": [
+          "Nancy"
+        ],
+        "period": {
+          "start": "2016-06-22T20:43:05.000Z"
+        }
+      },
+      "gender": "female",
+      "period": {
+        "start": "2017-06-09T13:41:09.000Z"
+      }
+    }
+  ],
+  "careProvider": [
+    {
+      "reference": "Practitioner/1912007",
+      "display": "McCurdy, Michael"
+    }
+  ]
+}
