@@ -72,9 +72,9 @@
     window.drawVisualization = function(p) {
         $('#holder').show();
         $('#loading').hide();
-        $('#fname').html(p.fname);
-        $('#lname').html(p.lname);
-        $('#birthdate').html(p.birthdate);
+        $('#fname').val(p.fname.toString());
+        $('#lname').val(p.lname.toString());
+        $('#birthdate').val(p.birthdate.toString());
     };
 
 })(window);
