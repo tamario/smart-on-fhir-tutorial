@@ -140,7 +140,7 @@ function retrieveReports(){
         },
         success: function (data) {
             console.log(data);
-            var src = 'data:application/pdf;base64, ' + Base64.encode(data);
+            var src = 'data:application/pdf;base64, ' + btoa(data);
             $('#pdfimage').attr('src', src);
         }
     });
