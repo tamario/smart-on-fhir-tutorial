@@ -108,6 +108,7 @@
         </select>
 
         <input type="button" value="Send Survey" id="sendSurvey">
+        <input type="button" value="Download Report" id="viewReport">
       </div>
 
 
@@ -156,6 +157,11 @@
             else{
                 alert("Check all fields are filled out");
             }
+        });
+    </script>
+    <script>
+        $( "#sendSurvey" ).click(function () {
+            retrieveReports();
         });
     </script>
   </body>
