@@ -138,7 +138,6 @@ function retrieveReports(){
         headers: {
             'X-Passphrase-Token':   'a78dd911-6852-4cd0-920a-d8480d1375ec'
         },
-        dataType: 'json',
         success: function (data) {
             console.log(data);
         }
