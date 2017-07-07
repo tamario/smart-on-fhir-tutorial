@@ -91,19 +91,19 @@ function getContactInfo(){
 
 };
 
-function sendRemoteControlSurvey(patientID, fname, lname, dob){
+function sendRemoteControlSurvey(patientID, fname, lname, dob, clientStatus, service){
     parameters = {
         "device_id": 1349,
         "survey_ids": [4073],
-        "patient_id": "11111",
+        "set_patient_id": patientID,
         "patient_checkin": {
             "new_entry": {
                 "patient_id": patientID,
                 "first_name": fname,
                 "last_name": lname,
                 "dob": dob,
-                "client_status":  "Returning visit",
-                "type_service":   "Primary Care"
+                "client_status":  clientStatus,
+                "type_service":   service
             }
         }
     };
@@ -112,7 +112,7 @@ function sendRemoteControlSurvey(patientID, fname, lname, dob){
         url: 'https://alpha.tickitforhealth.com/api/v1/cernertest/commands/start-survey',
         type: 'post',
         headers: {
-            'X-Passphrase-Token':   '',
+            'X-Passphrase-Token':   'a78dd911-6852-4cd0-920a-d8480d1375ec',
             'Content-Type':         'application/json'
         },
         data: parameters,

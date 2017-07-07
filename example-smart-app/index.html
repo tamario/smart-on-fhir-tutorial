@@ -98,7 +98,7 @@
           <option value="Returning visit">Returning visit</option>
         </select>
         <select id="service" name="Service">
-          <option value="-- Select a Service --">-- Select a Service --</option>
+          <option value="Select a Service">-- Select a Service --</option>
           <option value="Primary Care">Primary Care</option>
           <option value="Mental Health Services">Mental Health Services</option>
           <option value="Substance Use Services">Substance Use Services</option>
@@ -107,7 +107,7 @@
           <option value="Other Services">Other Services</option>
         </select>
 
-        <input type="button" value="Send Survey">
+        <input type="button" value="Send Survey" id="sendSurvey">
       </div>
 
 
@@ -133,6 +133,30 @@
           $('#errors').html('<p> Failed to call FHIR Service </p>');
         }
       );
+    </script>
+    <script>
+        $( "#sendSurvey" ).click(function () {
+            var fname         = $( "#fname" ).val();
+            var lname         = $( "#lname" ).val();
+            var birthdate     = $( "#birthdate" ).val();
+            var patientID     = $( "#patientID" ).val();
+            var clientStatus  = $( "#clientStatus" ).val();
+            var service       = $( "#service" ).val();
+
+            var inputStatus = 1;
+            $(":input").each(function() {
+                if($(this).val() === "") {
+                    inputStatus = 0;
+                }
+            });
+
+            if(clientStatus != "Select a Client Status" && service != "Select a Service" && inputStatus){
+                sendRemoteControlSurvey(patientID, fname, lname, birthdate, clientStatus, service);
+            }
+            else{
+                alert("Check all fields are filled out");
+            }
+        });
     </script>
   </body>
 </html>
