@@ -27,7 +27,6 @@
                         if(id.type.text == "MRN"){
                             patientID = id.value;
                             console.log(patientID);
-                            console.log(id.type.coding[0].code);
                         }
                     });
                     var gender = patient.gender;
