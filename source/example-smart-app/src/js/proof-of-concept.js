@@ -24,7 +24,7 @@
                     var patientIDs = patient.identifier;
                     var patientID = "";
                     patientIDs.forEach(function(id){
-                        if(id.type.coding[0].code == "MR"){
+                        if(id.type.text == "MRN"){
                             patientID = id.value;
                             console.log(patientID);
                             console.log(id.type.coding[0].code);
@@ -124,9 +124,5 @@ function sendRemoteControlSurvey(patientID, fname, lname, dob, clientStatus, ser
 };
 
 function sendSMSSurvey(phoneNumber){
-
-};
-
-function retrieveReports(){
 
 };
