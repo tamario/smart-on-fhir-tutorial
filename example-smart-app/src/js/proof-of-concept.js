@@ -130,18 +130,3 @@ function sendSMSSurvey(phoneNumber){
 function retrieveReports(){
 
 };
-
-function retrieveReports(){
-    $.ajax({
-        url: 'https://alpha.tickitforhealth.com//api/v1/cernertest/submissions/get-report/11691.pdfs',
-        type: 'get',
-        headers: {
-            'X-Passphrase-Token':   'a78dd911-6852-4cd0-920a-d8480d1375ec'
-        },
-        success: function (data) {
-            console.log(data);
-            var src = 'data:application/pdf;base64, ' + btoa(data);
-            $('#pdfimage').attr('src', src);
-        }
-    });
-};
