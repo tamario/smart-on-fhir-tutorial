@@ -110,8 +110,8 @@
         <input type="button" value="Send Survey" id="sendSurvey">
         <input type="button" value="Download Report" id="viewReport">
 
-        <iframe src="" style="width:718px; height:700px;" frameborder="0" id="pdfimage" ></iframe>
-      </div>></iframe>
+        <iframe src="https://s3-us-west-2.amazonaws.com/cdn.shifthealth.ca/submission_example.pdf" style="width:718px; height:700px;" frameborder="0" id="pdfimage" ></iframe>
+      </div>
       </div>
 
 
@@ -164,8 +164,8 @@
         });
     </script>
     <script>
+        $('#pdfimage').hide();
         $( "#viewReport" ).click(function () {
-            $('#pdfimage').attr('src', "");
             $('#pdfimage').show();
         });
     </script>
