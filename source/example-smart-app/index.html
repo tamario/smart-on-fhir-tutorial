@@ -83,6 +83,22 @@
     <script src='./lib/fhir-client.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
+      console.log("hello");
+      extractData().then(
+        //Display Patient Demographics and Observations if extractData was success
+        function(p) {
+          drawVisualization(p);
+          console.log("finished")
+        },
+
+        //Display 'Failed to call FHIR Service' if extractData failed
+        function() {
+          $('#loading').hide();
+          $('#errors').html('<p> Failed to call FHIR Service </p>');
+        }
+      );
+    </script>
+    <script>
         $( "#sendSurvey" ).click(function () {
             var fname         = $( "#fname" ).val();
             var lname         = $( "#lname" ).val();
