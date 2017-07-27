@@ -102,7 +102,8 @@ function sendRemoteControlSurvey(patientID, fname, lname, dob, clientStatus, ser
         url: 'https://alpha.tickitforhealth.com/api/v1/cernertest/commands/start-survey',
         type: 'post',
         headers: {
-            'X-Passphrase-Token':   'a78dd911-6852-4cd0-920a-d8480d1375ec'
+            'X-Passphrase-Token':   'a78dd911-6852-4cd0-920a-d8480d1375ec',
+            'Content-Type':         'application/json'
         },
         data: JSON.stringify(parameters),
         dataType: 'json',
