@@ -79,17 +79,6 @@
 
 })(window);
 
-
-/////
-//_id, identifier, name, family, given, birthdate, phone, email, address-postalcode, gender
-function getPatientInfo(){
-
-};
-
-function getContactInfo(){
-
-};
-
 function sendRemoteControlSurvey(patientID, fname, lname, dob, clientStatus, service){
     parameters = {
         "device_id": 1349,
@@ -109,12 +98,11 @@ function sendRemoteControlSurvey(patientID, fname, lname, dob, clientStatus, ser
 
     console.log(parameters);
 
-    $.ajax({
+    $.post({
         url: 'https://alpha.tickitforhealth.com/api/v1/cernertest/commands/start-survey',
         type: 'post',
         headers: {
-            'X-Passphrase-Token':   'a78dd911-6852-4cd0-920a-d8480d1375ec',
-            'Content-Type':         'application/json'
+            'X-Passphrase-Token':   'a78dd911-6852-4cd0-920a-d8480d1375ec'
         },
         data: JSON.stringify(parameters),
         dataType: 'json',
@@ -122,8 +110,4 @@ function sendRemoteControlSurvey(patientID, fname, lname, dob, clientStatus, ser
             console.log(data);
         }
     });
-};
-
-function sendSMSSurvey(phoneNumber){
-
 };
