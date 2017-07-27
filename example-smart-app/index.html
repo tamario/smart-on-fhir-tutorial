@@ -90,23 +90,23 @@
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
-    <script>
-        $('#pdfimage').hide();
-      console.log("hello");
-      extractData().then(
-        //Display Patient Demographics and Observations if extractData was success
-        function(p) {
-          drawVisualization(p);
-          console.log("finished")
-        },
+    <!--<script>-->
+        <!--$('#pdfimage').hide();-->
+      <!--console.log("hello");-->
+      <!--extractData().then(-->
+        <!--//Display Patient Demographics and Observations if extractData was success-->
+        <!--function(p) {-->
+          <!--drawVisualization(p);-->
+          <!--console.log("finished")-->
+        <!--},-->
 
-        //Display 'Failed to call FHIR Service' if extractData failed
-        function() {
-          $('#loading').hide();
-          $('#errors').html('<p> Failed to call FHIR Service </p>');
-        }
-      );
-    </script>
+        <!--//Display 'Failed to call FHIR Service' if extractData failed-->
+        <!--function() {-->
+          <!--$('#loading').hide();-->
+          <!--$('#errors').html('<p> Failed to call FHIR Service </p>');-->
+        <!--}-->
+      <!--);-->
+    <!--</script>-->
     <script>
         $( "#sendSurvey" ).click(function () {
             var fname         = $( "#fname" ).val();
@@ -131,11 +131,11 @@
             }
         });
     </script>
-    <script>
-        $('#pdfimage').hide();
-        $( "#viewReport" ).click(function () {
-            $('#pdfimage').show();
-        });
-    </script>
+    <!--<script>-->
+        <!--$('#pdfimage').hide();-->
+        <!--$( "#viewReport" ).click(function () {-->
+            <!--$('#pdfimage').show();-->
+        <!--});-->
+    <!--</script>-->
   </body>
 </html>
