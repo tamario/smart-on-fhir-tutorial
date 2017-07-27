@@ -107,6 +107,8 @@ function sendRemoteControlSurvey(patientID, fname, lname, dob, clientStatus, ser
         }
     };
 
+    console.log(parameters);
+
     $.ajax({
         url: 'https://alpha.tickitforhealth.com/api/v1/cernertest/commands/start-survey',
         type: 'post',
