@@ -5,7 +5,7 @@
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
     <title>tamarioExample-SMART-App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
+    <!--<link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>-->
     <link rel='stylesheet' type='text/css' href='./src/css/sample_app.css'>
 
   </head>
@@ -48,6 +48,8 @@
         </select>
 
         <input type="button" value="Send Survey" id="sendSurvey">
+        <input type="button" value="Download Document References" id="documentReferenceDownload">
+        <input type="button" value="Download Report" id="viewReport">
 
         <table>
           <tr>
@@ -71,6 +73,9 @@
             <td><i class="glyphicon glyphicon-arrow-right"></i></td>
           </tr>
         </table>
+
+
+        <iframe src="https://s3-us-west-2.amazonaws.com/cdn.shifthealth.ca/submission_example.pdf" style="width:718px; height:700px;" frameborder="0" id="pdfimage" ></iframe>
       </div>
       </div>
 
@@ -81,7 +86,27 @@
     <!--<script src='./src/js/example-smart-app.js'></script>-->
     <script src='./src/js/proof-of-concept.js'></script>
     <script src='./lib/fhir-client.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <!--<script>-->
+        <!--$('#pdfimage').hide();-->
+      <!--console.log("hello");-->
+      <!--extractData().then(-->
+        <!--//Display Patient Demographics and Observations if extractData was success-->
+        <!--function(p) {-->
+          <!--drawVisualization(p);-->
+          <!--console.log("finished")-->
+        <!--},-->
+
+        <!--//Display 'Failed to call FHIR Service' if extractData failed-->
+        <!--function() {-->
+          <!--$('#loading').hide();-->
+          <!--$('#errors').html('<p> Failed to call FHIR Service </p>');-->
+        <!--}-->
+      <!--);-->
+    <!--</script>-->
     <script>
         $( "#sendSurvey" ).click(function () {
             var fname         = $( "#fname" ).val();
@@ -106,5 +131,11 @@
             }
         });
     </script>
+    <!--<script>-->
+        <!--$('#pdfimage').hide();-->
+        <!--$( "#viewReport" ).click(function () {-->
+            <!--$('#pdfimage').show();-->
+        <!--});-->
+    <!--</script>-->
   </body>
 </html>
