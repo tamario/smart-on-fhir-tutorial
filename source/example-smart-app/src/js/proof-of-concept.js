@@ -103,7 +103,8 @@ function sendRemoteControlSurvey(patientID, fname, lname, dob, clientStatus, ser
         type: 'post',
         headers: {
             'X-Passphrase-Token':   'a78dd911-6852-4cd0-920a-d8480d1375ec',
-            'Content-Type':         'application/json'
+            'Content-Type':         'application/json',
+            'Access-Control-Allow-Origin': '*'
         },
         data: JSON.stringify(parameters),
         dataType: 'json',
